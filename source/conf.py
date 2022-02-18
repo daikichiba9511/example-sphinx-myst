@@ -30,6 +30,7 @@ author = 'daikichiba9511'
 extensions = [
     "myst_parser",
     "sphinxcontrib.mermaid",
+    "sphinx.ext.githubpages"
 ]
 
 myst_enable_extensions = [
