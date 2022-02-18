@@ -40,7 +40,7 @@ $$
 
 ```
 
-# Example of mermaid on Sphinx with MyST parser
+## Example of mermaid on Sphinx with MyST parser
 
 ここからはmermaidのテスト
 
@@ -73,7 +73,7 @@ sequenceDiagram
     Bob-->>John: Jolly good!
 ```
 
-# Example of Code
+## Example of Code
 
 * code block
 
