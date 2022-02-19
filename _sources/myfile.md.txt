@@ -109,3 +109,34 @@ fn main() {
 echo Hello World...
 
 ```
+
+```{admonition} hoge
+here is test
+```
+```{admonition} My markdown link
+Here is [markdown link syntax](https://jupyter.org)
+```
+
+```{admonition} 定理1.2.1 (特異点解消定理)
+
+hogehoge
+```
+
+
+````{admonition} 注：
+:class: warning
+this artigle is ambigious and example of sphinx with myste, so I don't guarantee these contents are correct
+
+```{warning} 
+this artigle is ambigious and example of sphinx with myste, so I don't guarantee these contents are correct.
+this warning is not cool for me when writing documents by Japanese...
+```
+
+````
+
+important?
+
+````{admonition} hoge
+:class: important
+God helps those who help themselves.
+````
