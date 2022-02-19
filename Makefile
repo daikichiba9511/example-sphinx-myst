@@ -4,7 +4,7 @@
 # You can set these variables from the command line, and also
 # from the environment for the first two.
 SPHINXOPTS    ?=
-SPHINXBUILD   ?= sphinx-build
+SPHINXBUILD   ?= poetry run sphinx-build
 SOURCEDIR     = source
 BUILDDIR      = build
 
@@ -20,7 +20,7 @@ help:
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 local: Makefile
-	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" "${BUILDDIR}" $(SPHINXOPTS) $(O)
+	@poetry run sphinx-autobuild -b html "$(SOURCEDIR)" "${BUILDDIR}" $(SPHINXOPTS) $(O)
 
 html: Makefile
 	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" "docs" $(SPHINXOPTS) $(O)

@@ -7,12 +7,31 @@ Example-sphinx-myst's documentation!
 ===============================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents of Example:
 
    myfile.md
 
+test sample
+===============
 
+.. toctree::
+   :maxdepth: 1
+   :caption: sample of multiple toctree
+
+   myfile.md
+
+.. toctree::
+   :maxdepth: 2
+   :caption: * sample of multiple toctree, right?
+
+   myfile.md
+
+can I use HTML?
+
+<ul>
+    <li> hoge </li>
+</ul>
 
 Indices and tables
 ==================
