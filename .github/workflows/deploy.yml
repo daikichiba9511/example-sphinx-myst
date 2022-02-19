@@ -13,7 +13,13 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
       with:
-        ref: "dev"
+        persist-credentials: false
+
+    - name: Install SSH Client
+      continue-on-error: true
+      uses: webfactory/ssh-agent@v0.2.0
+      with:
+        ssh-private-key: ${{ secrets.MY_ACTIONS_DEPLOY_KEY  }}
 
     - name: Set up Python
       uses: actions/setup-python@v1
@@ -26,24 +32,14 @@ jobs:
         pip install poetry
         poetry config virtualenvs.create false
         poetry install
+
     - name: Build
       run: |
         make html
-    - name: Deploy Configuration
-      run: |
-          mkdir ~/.ssh
-          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
-          echo "${{ secrets.MY_ACTIONS_DEPLOY_KEY }}" > ~/.ssh/id_rsa
-          chmod 400 ~/.ssh/id_rsa
-    - name: Push
-      env:
-        GITHUB_USER: "daikichiba9511"
-        GITHUB_EMAIL: "daikichiba.tech.ml@gmail.com"
-      run: |
-          git config --local user.name "${GITHUB_USER}"
-          git config --local user.email "${GITHUB_EMAIL}"
-          git remote set-url origin git@github.com:${GITHUB_REPOSITORY}.git
-          git add -v docs
-          git commit -m "auto rebuilding site"
-          git push origin -f master
 
+    - name: Build And Deploy
+      uses: JamesIves/github-pages-deploy-action@4.0.0
+      with:
+        SSH: true
+        BRANCH: master
+        FOLDER: docs
