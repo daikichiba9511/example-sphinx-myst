@@ -37,9 +37,9 @@ jobs:
       run: |
         make html
 
-    - name: Build And Deploy
+    - name: Deploy
       uses: JamesIves/github-pages-deploy-action@4.0.0
       with:
-        SSH: true
-        BRANCH: master
-        FOLDER: docs
+        ssh-key: true
+        branch: master
+        folder: docs
