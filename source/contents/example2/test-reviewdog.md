@@ -23,6 +23,9 @@ $$
 
 これは、$\lim_{|x-y|\rightarrow0}|f(x) - f(y)| = 0$である。
 
+普通の連続性が$x_0$を固定するごとに、$\epsilon$ に対応する $\delta>0$ を決めて $f(U_{\delta}(x_0)\subsetU_{\epsilon}(y_0))$
 
 ほげほげ。
+
+
 
