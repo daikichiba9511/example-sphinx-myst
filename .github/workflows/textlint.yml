@@ -42,7 +42,7 @@ jobs:
 
       - name: Execute textlint
         run: |
-          npx textlint -f checkstype "source/contents/**/.md" >> .textlint.log
+          npx textlint -f checkstype "source/contents/**/*.md" >> .textlint.log
 
       - name: Run reviewdog
         # Only if textlint find some error of docs, allow reviewdog to run.
