@@ -42,13 +42,13 @@ jobs:
 
       - name: Execute textlint
         run: |
-          npx textlint -f checkstype "source/contents/**/*.md" >> .textlint.log
+          npx textlint -f checkstyle "source/contents/**/*.md" >> .textlint.log
 
       - name: Run reviewdog
         # Only if textlint find some error of docs, allow reviewdog to run.
         if: failure()
         env:
-          REVIEWDOG_GUTHUB_API_TOKEN:
+          REVIEWDOG_GUTHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cat .textlint.log | reviewdog -f=checkstype --name="textlint" --reporter="github-pr-review"
 
