@@ -2,7 +2,7 @@ name: reviewdog
 
 on:
   pull_request:
-    branched: [ dev ]
+    branches: [ dev ]
 
 # Ref
 # * https://zenn.dev/yuta28/articles/blog-lint-ci-reviewdog
@@ -11,44 +11,15 @@ jobs:
   reviewdog-github-check:
     name: reviewdog (github check)
     runs-on: ubuntu-latest
-
     steps:
-      # action of reviewdog
-      - uses: reviewdog/action-setup@v1
-        with:
-          reviewdog_version: latest
-
-      # node action to run textlint
-      - uses: actions/setup-node@v2
-      
       - uses: actions/checkout@v2
-
-      - name: cache-node-modules
-        # if steps fails (=fail textlint), always make cache
-        uses: pat-s/always-upload-cache@v2.1.3
-        env:
-          cache-name: cache-node-modules
         with:
-          path: ~/.npm
-          key: node ${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            node-
-
-      - name: Install textlint
-        run: 'npm install --save-dev textlint textlint-rule-preset-smarthr textlint-rule-prh'
-
-      - name: Install dependent module
-        run: npm insltall
-
-      - name: Execute textlint
-        run: |
-          npx textlint -f checkstype "source/contents/*.md" >> .textlint.log
-
-      - name: Run reviewdog
-        # Only if textlint find some error of docs, allow reviewdog to run.
-        if: failure()
-        env:
-          REVIEWDOG_GUTHUB_API_TOKEN:
-        run: |
-          cat .textlint.log | reviewdog -f=checkstype --name="textlint" --reporter="github-pr-review"
+          submodules: true
+      - name: Execute textlint of github PR review
+        uses: tsuyoshicho/action-textlint@v3
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-pr-review
+          level: warning
+          textlint_flags: "source/contents/**/*.md"
 
