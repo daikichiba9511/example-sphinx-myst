@@ -21,6 +21,7 @@ test sample
    :caption: sample of multiple toctree
 
    contents/example1/myfile.md
+   contents/example2/test-reviewdog.md
 
 .. toctree::
    :maxdepth: 2
