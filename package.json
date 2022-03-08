@@ -1,0 +1,24 @@
+{
+  "name": "example-sphinx-myst",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daikichiba9511/example-sphinx-myst.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daikichiba9511/example-sphinx-myst/issues"
+  },
+  "homepage": "https://github.com/daikichiba9511/example-sphinx-myst#readme",
+  "dependencies": {
+    "textlint": "^12.1.1",
+    "textlint-rule-preset-smarthr": "^1.11.3",
+    "textlint-rule-prh": "^5.3.0"
+  }
+}
