@@ -11,18 +11,10 @@ jobs:
   reviewdog-github-check:
     name: reviewdog (github check)
     runs-on: ubuntu-latest
-
     steps:
-      # action of reviewdog
-      - uses: reviewdog/action-setup@v1
-        with:
-          reviewdog_version: latest
-
-      # node action to run textlint
-      - uses: actions/setup-node@v2
-      
       - uses: actions/checkout@v2
-
+        with:
+          submodules: true
       - name: Execute textlint of github PR review
         uses: tsuyoshicho/action-textlint@v3
         with:
