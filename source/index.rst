@@ -20,13 +20,13 @@ test sample
    :maxdepth: 1
    :caption: sample of multiple toctree
 
-   myfile.md
+   contents/example1/myfile.md
 
 .. toctree::
    :maxdepth: 2
    :caption: * sample of multiple toctree, right?
 
-   myfile.md
+   contents/example1/myfile.md
 
 can I use HTML?
 
