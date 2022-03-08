@@ -140,3 +140,20 @@ important?
 :class: important
 God helps those who help themselves.
 ````
+
+## (p) 1.3 test of section
+
+12345
+
+$$
+e^{i\pi} + 1 = 0 
+$$ (eqn:o)
+
+this is the best equation {eq}`eqn:o`
+
+\begin{align}
+a_{11}& =b_{11}&
+  a_{12}& =b_{12}\\
+a_{21}& =b_{21}&
+  a_{22}& =b_{22}+c_{22}
+\end{align}
