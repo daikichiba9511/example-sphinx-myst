@@ -38,7 +38,7 @@ jobs:
         run: 'npm install --save-dev textlint textlint-rule-preset-smarthr textlint-rule-prh'
 
       - name: Install dependent module
-        run: npm insltall
+        run: npm install
 
       - name: Execute textlint
         run: |
