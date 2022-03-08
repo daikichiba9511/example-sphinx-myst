@@ -43,6 +43,7 @@ jobs:
 
       - name: Execute textlint
         run: |
+          ls
           npx textlint -f checkstyle 'source/contents/**/*.md' > .textlint.log
 
       - name: Run reviewdog
