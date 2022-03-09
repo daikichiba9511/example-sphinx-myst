@@ -26,3 +26,13 @@ $$
 
 ほげほげ。
 
+
+```{mermaid}
+graph LR
+    A[ほげほげ] --> B(hogehoge)
+    B --> C{hello,mermaid!!}
+    B --> D{split,brunch}
+    B --> E{More!!}
+
+```
+
