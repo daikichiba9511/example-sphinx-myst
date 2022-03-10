@@ -43,3 +43,6 @@ graph LR
 | 1.0 | 2.0 | 3.0 | 4.0  |
 | 4.0 | 3.0 | 4.0 | 10.0 |
 
+* 画像の挿入
+
+![sample-img1](image/sample-img1.png)
