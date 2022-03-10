@@ -45,7 +45,7 @@ npm install
 
 To check documents, this commands is usefull.
 
-Documents Server by sphinx will be launched. By default, server port is 8888.
+Documents Server by sphinx will be launched. By default, server port is 8000.
 
 ```shell
 # develop local document server
