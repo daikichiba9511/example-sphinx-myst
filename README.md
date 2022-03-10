@@ -22,6 +22,10 @@ this codes has made by these tools below.
 
     * https://github.com/reviewdog/reviewdog
 
+* mecab-python3
+
+    * https://github.com/SamuraiT/mecab-python3
+
 
 ## How
 
