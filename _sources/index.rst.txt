@@ -10,7 +10,7 @@ Example-sphinx-myst's documentation!
    :maxdepth: 1
    :caption: Contents of Example:
 
-   myfile.md
+   contents/example1myfile.md
 
 
 test sample
